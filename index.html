@@ -1,79 +1,40 @@
+
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EM CÓ ĐIỀU MUỐN NÓI VỚI CHỊ!</title>
-  <style>
-    body {
-      background-color: pink;
-      text-align: center;
-      font-family: Arial, sans-serif;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy with Zoom Effect</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.152.2/build/three.module.js",
+        "three/addons/controls/OrbitControls.js": "https://unpkg.com/three@0.152.2/examples/jsm/controls/OrbitControls.js",
+        "three/examples/jsm/loaders/FontLoader.js": "https://unpkg.com/three@0.152.2/examples/jsm/loaders/FontLoader.js",
+        "three/examples/jsm/geometries/TextGeometry.js": "https://unpkg.com/three@0.152.2/examples/jsm/geometries/TextGeometry.js"
+      }
     }
-    h1 {
-      font-size: 24px;
-      font-weight: bold;
-      margin-top: 40px;
-    }
-    button {
-      font-size: 16px;
-      font-weight: bold;
-      background-color: white;
-      color: black;
-      border: none;
-      border-radius: 20px;
-      padding: 10px 20px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    button:hover {
-      background-color: #ff9999;
-      color: white;
-    }
-    .popup {
-      position: absolute;
-      width: 300px;
-      height: 100px;
-      background-color: pink;
-      border: 2px solid #ff9999;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 14px;
-    }
-  </style>
+    </script>
 </head>
+
 <body>
-
-  <h1>EM CÓ ĐIỀU MUỐN NÓI VỚI CHỊ!</h1>
-
-  <button onclick="openNewWindow()">ẤN VÀO ĐÂY ĐI</button>
-
-  <script>
-    function openNewWindow() {
-      // Lấy kích thước màn hình
-      const screenWidth = window.innerWidth;
-      const screenHeight = window.innerHeight;
-
-      // Random vị trí
-      const x = Math.floor(Math.random() * (screenWidth - 300));
-      const y = Math.floor(Math.random() * (screenHeight - 100));
-
-      // Tạo popup mới
-      const popup = document.createElement("div");
-      popup.classList.add("popup");
-      popup.style.left = x + "px";
-      popup.style.top = y + "px";
-      popup.textContent = "ANH NHỚ CHỊ NHIỀU LẮM!";
-
-      document.body.appendChild(popup);
-
-      // Tạo tiếp sau 600ms
-      setTimeout(openNewWindow, 600);
-    }
-  </script>
-
+  <audio id="bg-music" autoplay loop>
+   <source src="" type="audio/mpeg" />
+  </audio>
+    <div id="container"></div>
+    <div id="landscape-warning">
+      <div class="warning-content">
+        <div class="rotate-icon"></div>
+        <h1>Stellar Bloom</h1>
+        <h1>Tinh Cầu</h1>
+        <div class="stars-bg"></div>
+      </div>
+    </div>
+    <div id="dark-overlay"></div>
+    <div id="info">
+      
+    </div>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
